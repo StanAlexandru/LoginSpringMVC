@@ -9,9 +9,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Hello Page</title>
     </head>
     <body>
-        <h1>Hello ${username}!</h1>
+        <h1>Hello <%= request.getSession().getAttribute("username").toString() %> !</h1>
     </body>
 </html>

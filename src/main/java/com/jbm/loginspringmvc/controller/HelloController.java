@@ -5,8 +5,10 @@
  */
 package com.jbm.loginspringmvc.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -20,9 +22,13 @@ public class HelloController {
     @RequestMapping(
             value = "hello",
             method = RequestMethod.GET)
-    public String helloAction(Model model){
+    public String helloAction(HttpServletRequest request){
         
-        model.addAttribute("username", "John");
+        Object sessionUsername = request.getSession().getAttribute("username");
+        
+        if(StringUtils.isEmpty(sessionUsername)){
+            return "redirect:/login";
+        }
         
         return "hello";
     
