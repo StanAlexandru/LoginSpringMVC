@@ -6,7 +6,7 @@
 package com.jbm.loginspringmvc.service;
 
 import com.jbm.loginspringmvc.entity.User;
-import com.jbm.loginspringmvc.repository.UserRepositoryJdbc;
+import com.jbm.loginspringmvc.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -20,8 +20,8 @@ public class LoginService {
     
     @Autowired
     @Qualifier("JdbcTemplateRepository")
-    UserRepositoryJdbc userRepository;
-    
+    //@Qualifier("JpaRepository")
+    UserRepository userRepository;
     public User login(User user){
         
         return userRepository.getUser(user.getUsername(), user.getPassword());

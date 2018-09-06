@@ -13,6 +13,7 @@ import java.io.Serializable;
  * @author astan
  */
 //@Entity
+//@Table(name = "users", schema = "dbo")
 public class User implements Serializable {
     
     //@Id

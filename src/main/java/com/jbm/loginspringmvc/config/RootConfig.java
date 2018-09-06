@@ -61,14 +61,14 @@ public class RootConfig {
     }
     
     /*
-    //add spring-jpa and hibernate-jpa-2.1-api to make this work
+    //JPA
     @Bean
     LocalEntityManagerFactoryBean localEntityManagerFactoryBean(){
         LocalEntityManagerFactoryBean emfb = new LocalEntityManagerFactoryBean();
         emfb.setPersistenceUnitName("LoginSpringMvc_PU");
         return emfb;        
     }
-    
+    //JPA
     @Bean
     @Autowired
     public PlatformTransactionManager transactionManager(EntityManagerFactory localEntityManagerFactoryBean){
